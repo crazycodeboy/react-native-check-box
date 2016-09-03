@@ -12,7 +12,7 @@ Checkbox component for react native, it works on iOS and Android.
 ## Installation
 
 * 1.Run `npm i react-native-check-box --save`
-* 2.`import Toast, {DURATION} from 'react-native-check-box'`    
+* 2.`import CheckBox from 'react-native-check-box'`    
 
 ## Demo  
 * [Examples](https://github.com/crazycodeboy/react-native-check-box/tree/master/examples)
