@@ -1,0 +1,33 @@
+{
+  "name": "react-native-check-box",
+  "version": "1.0.0",
+  "description": "Checkbox component for react native, it works on iOS and Android.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crazycodeboy/react-native-check-box.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-native-component",
+    "react-native-checkbox",
+    "check-box",
+    "check",
+    "box",
+    "react-component",
+    "ios",
+    "android"
+  ],
+  "author": "crazycodeboy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crazycodeboy/react-native-check-box/issues"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.20.0"
+  },
+  "homepage": "https://github.com/crazycodeboy/react-native-check-box#readme"
+}
