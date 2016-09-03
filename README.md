@@ -83,7 +83,7 @@ leftText | React.PropTypes.string |true |   | Custom left Text
 checkedImage  |  React.PropTypes.element | Default image | true  | Custom  checked Image
 unCheckedImage  |  React.PropTypes.element |  Default image  | true  | Custom  unchecked Image
 isChecked  |  React.PropTypes.bool |  true  |  false  | Initialization checkbox checked
-onClick   |  React.PropTypes.func.isRequired |  false  | callback  function
+onClick   |  React.PropTypes.func.isRequired |  false  |  | callback  function
 
 ## Contribution
 
