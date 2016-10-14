@@ -1,4 +1,4 @@
-/**
+ /**
  * react-native-check-box
  * Checkbox component for react native, it works on iOS and Android
  * https://github.com/crazycodeboy/react-native-check-box
@@ -29,6 +29,8 @@ export default class CheckBox extends Component {
         ...View.propTypes,
         leftText: React.PropTypes.string,
         leftTextView: React.PropTypes.element,
+        rightText: React.PropTypes.string,
+        rightTextView: React.PropTypes.string,
         checkedImage: React.PropTypes.element,
         unCheckedImage: React.PropTypes.element,
         onClick: React.PropTypes.func.isRequired,
@@ -44,6 +46,13 @@ export default class CheckBox extends Component {
         if (!this.props.leftText)return null;
         return (
             <Text style={styles.leftText}>{this.props.leftText}</Text>
+        )
+    }
+    _renderRight() {
+        if (this.props.rightTextView)return this.props.rightTextView;
+        if (!this.props.rightText)return null;
+        return (
+            <Text style={styles.rightText}>{this.props.rightText}</Text>
         )
     }
 
@@ -80,6 +89,7 @@ export default class CheckBox extends Component {
                 <View style={styles.container}>
                     {this._renderLeft()}
                     {this._renderImage()}
+                    {this._renderRight()}
                 </View>
             </TouchableHighlight>
         )
@@ -89,10 +99,12 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center'
-        // backgroundColor:'gray'
     },
     leftText: {
         flex: 1,
-        // backgroundColor:'red',
+    },
+    rightText: {
+        flex: 1,
+        marginLeft: 10
     }
 })
