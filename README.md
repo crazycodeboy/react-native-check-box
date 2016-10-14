@@ -80,6 +80,7 @@ Props              | Type     | Optional | Default     | Description
 ----------------- | -------- | -------- | ----------- | -----------
 style  | View.propTypes.style  | true |   |   Custom style checkbox
 leftText | React.PropTypes.string |true |   | Custom left Text
+rightText | React.PropTypes.string |true |   | Custom right Text
 checkedImage  |  React.PropTypes.element  | true  | Default image | Custom  checked Image
 unCheckedImage  |  React.PropTypes.element  | true  |  Default image  | Custom  unchecked Image
 isChecked  |  React.PropTypes.bool |  true  |  false  | Initialization checkbox checked
