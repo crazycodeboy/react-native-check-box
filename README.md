@@ -49,7 +49,7 @@ Then you can use it like this:
 
 ### Basic usage  
 
-````javascript
+```javascript
  <CheckBox
      style={{flex: 1, padding: 10}}
      onClick={()=>this.onClick(data)}
@@ -88,7 +88,9 @@ Props              | Type     | Optional | Default     | Description
 ----------------- | -------- | -------- | ----------- | -----------
 style  | View.propTypes.style  | true |   |   Custom style checkbox
 leftText | React.PropTypes.string |true |   | Custom left Text
+leftTextStyle  | React.PropTypes.object | true | Custom left Text style
 rightText | React.PropTypes.string |true |   | Custom right Text
+rightTextStyle  | React.PropTypes.object | true | Custom right Text style
 checkedImage  |  React.PropTypes.element  | true  | Default image | Custom  checked Image
 unCheckedImage  |  React.PropTypes.element  | true  |  Default image  | Custom  unchecked Image
 isChecked  |  React.PropTypes.bool |  true  |  false  | Initialization checkbox checked
