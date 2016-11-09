@@ -30,7 +30,9 @@ export default class CheckBox extends Component {
         leftText: React.PropTypes.string,
         leftTextView: React.PropTypes.element,
         rightText: React.PropTypes.string,
+        leftTextStyle: React.PropTypes.object,
         rightTextView: React.PropTypes.string,
+        rightTextStyle: React.PropTypes.object,
         checkedImage: React.PropTypes.element,
         unCheckedImage: React.PropTypes.element,
         onClick: React.PropTypes.func.isRequired,
@@ -39,20 +41,22 @@ export default class CheckBox extends Component {
     }
     static defaultProps = {
         isChecked: false,
+        leftTextStyle: {},
+        rightTextStyle: {}
     }
 
     _renderLeft() {
         if (this.props.leftTextView)return this.props.leftTextView;
         if (!this.props.leftText)return null;
         return (
-            <Text style={styles.leftText}>{this.props.leftText}</Text>
+            <Text style={[styles.leftText, this.props.leftTextStyle]}>{this.props.leftText}</Text>
         )
     }
     _renderRight() {
         if (this.props.rightTextView)return this.props.rightTextView;
         if (!this.props.rightText)return null;
         return (
-            <Text style={styles.rightText}>{this.props.rightText}</Text>
+            <Text style={[styles.rightText, this.props.rightTextStyle]}>{this.props.rightText}</Text>
         )
     }
 
