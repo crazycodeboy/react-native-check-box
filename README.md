@@ -88,9 +88,9 @@ Props              | Type     | Optional | Default     | Description
 ----------------- | -------- | -------- | ----------- | -----------
 style  | View.propTypes.style  | true |   |   Custom style checkbox
 leftText | React.PropTypes.string |true |   | Custom left Text
-leftTextStyle  | React.PropTypes.object | true | Custom left Text style
+leftTextStyle  |  View.propTypes.style | true | Custom left Text style
 rightText | React.PropTypes.string |true |   | Custom right Text
-rightTextStyle  | React.PropTypes.object | true | Custom right Text style
+rightTextStyle  | View.propTypes.style | true | Custom right Text style
 checkedImage  |  React.PropTypes.element  | true  | Default image | Custom  checked Image
 unCheckedImage  |  React.PropTypes.element  | true  |  Default image  | Custom  unchecked Image
 isChecked  |  React.PropTypes.bool |  true  |  false  | Initialization checkbox checked
