@@ -94,7 +94,7 @@ rightTextView | React.PropTypes.element | true |   | Custom right TextView
 rightTextStyle  | Text.propTypes.style | true |  | Custom right Text style
 checkedImage  |  React.PropTypes.element  | true  | Default image | Custom  checked Image
 unCheckedImage  |  React.PropTypes.element  | true  |  Default image  | Custom  unchecked Image
-isChecked  |  React.PropTypes.bool |  true  |  false  | Initialization checkbox checked
+isChecked  |  React.PropTypes.bool |  false  |  false  | checkbox checked state
 onClick   |  React.PropTypes.func.isRequired |  false  |  | callback  function
 
 ## Contribution
