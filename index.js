@@ -78,7 +78,7 @@ export default class CheckBox extends Component {
     }
 
     genCheckedImage() {
-        var source = this.props.isChecked ? require('./img/ic_check_box.png') : require('./img/ic_check_box_outline_blank.png');
+        var source = this.state.isChecked ? require('./img/ic_check_box.png') : require('./img/ic_check_box_outline_blank.png');
 
         return (
             <Image source={source}/>
