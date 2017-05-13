@@ -29,7 +29,7 @@ export default class CheckBox extends Component {
         checkedImage: React.PropTypes.element,
         unCheckedImage: React.PropTypes.element,
         onClick: React.PropTypes.func.isRequired,
-        isChecked: React.PropTypes.bool.isRequired
+        isChecked: React.PropTypes.bool.isRequired,
 	checkBoxColor: React.PropTypes.string,
     }
     static defaultProps = {
