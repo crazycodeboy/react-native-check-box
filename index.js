@@ -13,13 +13,14 @@ import {
     View,
     Image,
     Text,
-    TouchableHighlight
+    TouchableHighlight,
+    ViewPropTypes,
 } from 'react-native';
 
 
 export default class CheckBox extends Component {
     static propTypes = {
-        ...View.propTypes,
+        ...ViewPropTypes,
         leftText: React.PropTypes.string,
         leftTextView: React.PropTypes.element,
         rightText: React.PropTypes.string,
