@@ -86,16 +86,16 @@ renderCheckBox(data) {
 
 Props              | Type     | Optional | Default     | Description
 ----------------- | -------- | -------- | ----------- | -----------
-style  | View.propTypes.style  | true |   |   Custom style checkbox
-leftText | React.PropTypes.string |true |   | Custom left Text
+style  | ViewPropTypes.style  | true |   |   Custom style checkbox
+leftText | PropTypes.string |true |   | Custom left Text
 leftTextStyle  |  Text.propTypes.style | true |  | Custom left Text style
-rightText | React.PropTypes.string |true |   | Custom right Text
-rightTextView | React.PropTypes.element | true |   | Custom right TextView
+rightText | PropTypes.string |true |   | Custom right Text
+rightTextView | PropTypes.element | true |   | Custom right TextView
 rightTextStyle  | Text.propTypes.style | true |  | Custom right Text style
-checkedImage  |  React.PropTypes.element  | true  | Default image | Custom  checked Image
-unCheckedImage  |  React.PropTypes.element  | true  |  Default image  | Custom  unchecked Image
-isChecked  |  React.PropTypes.bool |  false  |  false  | checkbox checked state
-onClick   |  React.PropTypes.func.isRequired |  false  |  | callback  function
+checkedImage  |  PropTypes.element  | true  | Default image | Custom  checked Image
+unCheckedImage  |  PropTypes.element  | true  |  Default image  | Custom  unchecked Image
+isChecked  |  PropTypes.bool |  false  |  false  | checkbox checked state
+onClick   |  PropTypes.func.isRequired |  false  |  | callback  function
 
 ## Contribution
 
