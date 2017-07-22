@@ -67,7 +67,7 @@ export default class CheckBox extends Component {
         var source = this.props.isChecked ? require('./img/ic_check_box.png') : require('./img/ic_check_box_outline_blank.png');
 
         return (
-            <Image source={source} tintColor={this.props.checkBoxColor}/>
+            <Image source={source} style={{tintColor: this.props.checkBoxColor}} />
         );
     }
 
