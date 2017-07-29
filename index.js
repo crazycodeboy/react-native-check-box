@@ -32,10 +32,12 @@ export default class CheckBox extends Component {
         unCheckedImage: PropTypes.element,
         onClick: PropTypes.func.isRequired,
         isChecked: PropTypes.bool.isRequired,
+        isIndeterminate: PropTypes.bool.isRequired,
         checkBoxColor: PropTypes.string,
     }
     static defaultProps = {
         isChecked: false,
+        isIndeterminate: false,
         leftTextStyle: {},
         rightTextStyle: {}
     }
