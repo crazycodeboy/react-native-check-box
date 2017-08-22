@@ -34,6 +34,7 @@ export default class CheckBox extends Component {
         isChecked: PropTypes.bool.isRequired,
         isIndeterminate: PropTypes.bool.isRequired,
         checkBoxColor: PropTypes.string,
+        disabled: PropTypes.bool,
     }
     static defaultProps = {
         isChecked: false,
@@ -88,6 +89,7 @@ export default class CheckBox extends Component {
                 style={this.props.style}
                 onPress={this.props.onClick}
                 underlayColor='transparent'
+                disabled={this.props.disabled}
             >
                 <View style={styles.container}>
                     {this._renderLeft()}
