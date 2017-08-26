@@ -3,7 +3,7 @@
  * Checkbox component for react native, it works on iOS and Android
  * https://github.com/crazycodeboy/react-native-check-box
  * Email:crazycodeboy@gmail.com
- * Blog:http://jiapenghui.com
+ * Blog:http://www.devio.org
  * @flow
  */
 
