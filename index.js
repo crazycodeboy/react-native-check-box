@@ -40,6 +40,22 @@ export default class CheckBox extends Component {
         rightTextStyle: {}
     }
 
+    static state = {
+      isChecked: false
+    }
+
+    componentWillMount() {
+        this.setState({
+            isChecked: this.props.isChecked
+        })
+    }
+
+    componentWillUpdate(nextProps) {
+        this.state.isChecked = nextProps.isChecked;
+
+        return true;
+    }
+
     _renderLeft() {
         if (this.props.leftTextView)return this.props.leftTextView;
         if (!this.props.leftText)return null;
@@ -56,7 +72,7 @@ export default class CheckBox extends Component {
     }
 
     _renderImage() {
-        if (this.props.isChecked) {
+        if (this.state.isChecked) {
             return this.props.checkedImage ? this.props.checkedImage : this.genCheckedImage();
         } else {
             return this.props.unCheckedImage ? this.props.unCheckedImage : this.genCheckedImage();
@@ -64,7 +80,7 @@ export default class CheckBox extends Component {
     }
 
     genCheckedImage() {
-        var source = this.props.isChecked ? require('./img/ic_check_box.png') : require('./img/ic_check_box_outline_blank.png');
+        var source = this.state.isChecked ? require('./img/ic_check_box.png') : require('./img/ic_check_box_outline_blank.png');
 
         return (
             <Image source={source} style={{tintColor: this.props.checkBoxColor}} />
