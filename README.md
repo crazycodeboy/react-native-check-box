@@ -100,6 +100,7 @@ checkedImage  |  PropTypes.element  | true  | Default image | Custom  checked Im
 unCheckedImage  |  PropTypes.element  | true  |  Default image  | Custom  unchecked Image
 isChecked  |  PropTypes.bool |  false  |  false  | checkbox checked state
 onClick   |  PropTypes.func.isRequired |  false  |  | callback  function
+disabled  |  PropTypes.bool            | true  |  false | Disable the checkbox button
 
 ## Contribution
 

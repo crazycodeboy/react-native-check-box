@@ -32,10 +32,13 @@ export default class CheckBox extends Component {
         unCheckedImage: PropTypes.element,
         onClick: PropTypes.func.isRequired,
         isChecked: PropTypes.bool.isRequired,
+        isIndeterminate: PropTypes.bool.isRequired,
         checkBoxColor: PropTypes.string,
+        disabled: PropTypes.bool,
     }
     static defaultProps = {
         isChecked: false,
+        isIndeterminate: false,
         leftTextStyle: {},
         rightTextStyle: {}
     }
@@ -56,6 +59,9 @@ export default class CheckBox extends Component {
     }
 
     _renderImage() {
+        if (this.props.isIndeterminate){
+            return this.props.indeterminateImage ? this.props.indeterminateImage : this.genCheckedImage();
+        }
         if (this.props.isChecked) {
             return this.props.checkedImage ? this.props.checkedImage : this.genCheckedImage();
         } else {
@@ -64,7 +70,13 @@ export default class CheckBox extends Component {
     }
 
     genCheckedImage() {
-        var source = this.props.isChecked ? require('./img/ic_check_box.png') : require('./img/ic_check_box_outline_blank.png');
+        var source;
+        if (this.props.isIndeterminate) {
+          source = require('./img/ic_indeterminate_check_box.png');
+        }
+        else {
+          source = this.props.isChecked ? require('./img/ic_check_box.png') : require('./img/ic_check_box_outline_blank.png');
+        }
 
         return (
             <Image source={source} style={{tintColor: this.props.checkBoxColor}} />
@@ -77,6 +89,7 @@ export default class CheckBox extends Component {
                 style={this.props.style}
                 onPress={this.props.onClick}
                 underlayColor='transparent'
+                disabled={this.props.disabled}
             >
                 <View style={styles.container}>
                     {this._renderLeft()}
