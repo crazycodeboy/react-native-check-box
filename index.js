@@ -36,9 +36,9 @@ export default class CheckBox extends Component {
         rightTextStyle: PropTypes.object,
         checkedImage: PropTypes.element,
         unCheckedImage: PropTypes.element,
-        onClick: PropTypes.func.isRequired,
-        isChecked: PropTypes.bool.isRequired,
-        isIndeterminate: PropTypes.bool.isRequired,
+        onClick: PropTypes.func,
+        isChecked: PropTypes.bool,
+        isIndeterminate: PropTypes.bool,
         checkBoxColor: PropTypes.string,
         disabled: PropTypes.bool,
     }
@@ -52,7 +52,7 @@ export default class CheckBox extends Component {
         this.setState({
             isChecked: !this.state.isChecked
         })
-        this.props.onClick();
+        this.props.onClick && this.props.onClick(this);
     }
     _renderLeft() {
         if (this.props.leftTextView)return this.props.leftTextView;
