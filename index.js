@@ -52,7 +52,7 @@ export default class CheckBox extends Component {
         this.setState({
             isChecked: !this.state.isChecked
         })
-        this.props.onClick();
+        this.props.onClick(!this.state.isChecked);
     }
     _renderLeft() {
         if (this.props.leftTextView)return this.props.leftTextView;
