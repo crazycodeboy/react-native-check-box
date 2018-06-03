@@ -37,6 +37,7 @@ export default class CheckBox extends Component {
         checkedImage: PropTypes.element,
         unCheckedImage: PropTypes.element,
         onClick: PropTypes.func.isRequired,
+        onLongClick: PropTypes.func,
         isChecked: PropTypes.bool.isRequired,
         isIndeterminate: PropTypes.bool.isRequired,
         checkBoxColor: PropTypes.string,
@@ -108,6 +109,7 @@ export default class CheckBox extends Component {
             <TouchableHighlight
                 style={this.props.style}
                 onPress={()=>this.onClick()}
+                onLongPress={this.props.onLongClick}
                 underlayColor='transparent'
                 disabled={this.props.disabled}
             >
