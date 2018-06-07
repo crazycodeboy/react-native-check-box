@@ -1,6 +1,6 @@
 {
   "name": "@mesameerahmed/react-native-check-box",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Checkbox component for react native, it works on iOS and Android.",
   "main": "index.js",
   "scripts": {
