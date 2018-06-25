@@ -1,6 +1,6 @@
 {
-  "name": "@mesameerahmed/react-native-check-box",
-  "version": "2.1.1",
+  "name": "react-native-check-box",
+  "version": "2.1.0",
   "description": "Checkbox component for react native, it works on iOS and Android.",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sameer-ahmed/react-native-check-box.git"
+    "url": "git+https://github.com/crazycodeboy/react-native-check-box.git"
   },
   "keywords": [
     "react-native",
