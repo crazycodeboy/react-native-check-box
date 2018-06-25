@@ -26,6 +26,11 @@ export default class CheckBox extends Component {
             isChecked: this.props.isChecked,
         }
     }
+    componentWillReceiveProps(nextProps) {
+        if (this.props.isChecked !== nextProps.isChecked) {
+            this.setState({isChecked: nextProps.isChecked});
+        }
+    }
     static propTypes = {
         ...(ViewPropTypes || View.PropTypes),
         leftText: PropTypes.string,
@@ -43,6 +48,7 @@ export default class CheckBox extends Component {
         checkedCheckBoxColor: PropTypes.string,
         uncheckedCheckBoxColor: PropTypes.string,
         disabled: PropTypes.bool,
+        numberOfLines: PropTypes.number
     }
     static defaultProps = {
         isChecked: false,
@@ -70,14 +76,14 @@ export default class CheckBox extends Component {
         if (this.props.leftTextView)return this.props.leftTextView;
         if (!this.props.leftText)return null;
         return (
-            <Text style={[styles.leftText, this.props.leftTextStyle]}>{this.props.leftText}</Text>
+            <Text numberOfLines={this.props.numberOfLines} style={[styles.leftText, this.props.leftTextStyle]}>{this.props.leftText}</Text>
         );
     }
     _renderRight() {
         if (this.props.rightTextView)return this.props.rightTextView;
         if (!this.props.rightText)return null;
         return (
-            <Text style={[styles.rightText, this.props.rightTextStyle]}>{this.props.rightText}</Text>
+            <Text numberOfLines={this.props.numberOfLines} style={[styles.rightText, this.props.rightTextStyle]}>{this.props.rightText}</Text>
         );
     }
 
