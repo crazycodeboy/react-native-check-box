@@ -112,7 +112,9 @@ unCheckedImage  |  PropTypes.element  | true  |  Default image  | Custom  unchec
 isChecked  |  PropTypes.bool |  false  |  false  | checkbox checked state
 onClick   |  PropTypes.func.isRequired |  false  |  | callback  function
 disabled  |  PropTypes.bool            | true  |  false | Disable the checkbox button
-checkBoxColor | PropTypes.string | true |   | Tint color of the checkbox image
+checkBoxColor | PropTypes.string | true |   | Tint color of the checkbox image (this props is for both checked and unchecked state)
+checkedCheckBoxColor | PropTypes.string | true |   | Tint color of the checked state checkbox image (this prop will override value of `checkBoxColor` for checked state)
+uncheckedCheckBoxColor | PropTypes.string | true |   | Tint color of the unchecked state checkbox image (this prop will override value of `checkBoxColor` for unchecked state)
 
 ## Contribution
 
