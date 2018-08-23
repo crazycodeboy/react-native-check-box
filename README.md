@@ -19,7 +19,7 @@ Checkbox component for react native, it works on iOS and Android.
 
 ## Changes
 
-For React Native >= 0.54 use v2.1.1+, for React Native < 0.4.4 use v1.0.4
+For React Native >= 0.54 use v2.1.2+, for React Native < 0.4.4 use v1.0.4
 
 ## Installation
 
