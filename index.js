@@ -22,10 +22,8 @@ import PropTypes from 'prop-types';
 export default class CheckBox extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            isChecked: this.props.isChecked,
-        }
     }
+
     static propTypes = {
         ...(ViewPropTypes || View.PropTypes),
         leftText: PropTypes.string,
@@ -49,40 +47,34 @@ export default class CheckBox extends Component {
         rightTextStyle: {}
     }
 
-    static getDerivedStateFromProps(nextProps, prevState) {
-        if (prevState.isChecked !== nextProps.isChecked) {
-            return {
-                isChecked: nextProps.isChecked
-            };
-        }
-        return null;
-    }
     onClick() {
         this.setState({
-            isChecked: !this.state.isChecked
+            isChecked: !this.props.isChecked
         })
         this.props.onClick();
     }
+
     _renderLeft() {
-        if (this.props.leftTextView)return this.props.leftTextView;
-        if (!this.props.leftText)return null;
+        if (this.props.leftTextView) return this.props.leftTextView;
+        if (!this.props.leftText) return null;
         return (
             <Text style={[styles.leftText, this.props.leftTextStyle]}>{this.props.leftText}</Text>
         );
     }
+
     _renderRight() {
-        if (this.props.rightTextView)return this.props.rightTextView;
-        if (!this.props.rightText)return null;
+        if (this.props.rightTextView) return this.props.rightTextView;
+        if (!this.props.rightText) return null;
         return (
             <Text style={[styles.rightText, this.props.rightTextStyle]}>{this.props.rightText}</Text>
         );
     }
 
     _renderImage() {
-        if (this.props.isIndeterminate){
+        if (this.props.isIndeterminate) {
             return this.props.indeterminateImage ? this.props.indeterminateImage : this.genCheckedImage();
         }
-        if (this.state.isChecked) {
+        if (this.props.isChecked) {
             return this.props.checkedImage ? this.props.checkedImage : this.genCheckedImage();
         } else {
             return this.props.unCheckedImage ? this.props.unCheckedImage : this.genCheckedImage();
@@ -90,16 +82,16 @@ export default class CheckBox extends Component {
     }
 
     genCheckedImage() {
-        var source;
+        let source;
         if (this.props.isIndeterminate) {
             source = require('./img/ic_indeterminate_check_box.png');
         }
         else {
-            source = this.state.isChecked ? require('./img/ic_check_box.png') : require('./img/ic_check_box_outline_blank.png');
+            source = this.props.isChecked ? require('./img/ic_check_box.png') : require('./img/ic_check_box_outline_blank.png');
         }
 
         return (
-            <Image source={source} style={{tintColor: this.props.checkBoxColor}} />
+            <Image source={source} style={{tintColor: this.props.checkBoxColor}}/>
         );
     }
 
@@ -107,7 +99,7 @@ export default class CheckBox extends Component {
         return (
             <TouchableHighlight
                 style={this.props.style}
-                onPress={()=>this.onClick()}
+                onPress={() => this.onClick()}
                 underlayColor='transparent'
                 disabled={this.props.disabled}
             >

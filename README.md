@@ -19,7 +19,7 @@ Checkbox component for react native, it works on iOS and Android.
 
 ## Changes
 
-For React Native >= 0.54 use v2.1.0+, for React Native < 0.4.4 use v1.0.4
+For React Native >= 0.54 use v2.1.1+, for React Native < 0.4.4 use v1.0.4
 
 ## Installation
 
@@ -42,10 +42,14 @@ Inside your component's render method, use CheckBox:
 ```javascript
 <CheckBox
     style={{flex: 1, padding: 10}}
-    onClick={()=>this.onClick(data)}
-    isChecked={data.checked}
-    leftText={leftText}
-/>;
+    onClick={()=>{
+      this.setState({
+          isChecked:!this.state.isChecked
+      })
+    }}
+    isChecked={this.state.isChecked}
+    leftText={"CheckBox"}
+/>
 ```
 
 Then you can use it like this:   
@@ -54,12 +58,16 @@ Then you can use it like this:
 ### Basic usage  
 
 ```javascript
- <CheckBox
-     style={{flex: 1, padding: 10}}
-     onClick={()=>this.onClick(data)}
-     isChecked={data.checked}
-     leftText={leftText}
- />;
+<CheckBox
+    style={{flex: 1, padding: 10}}
+    onClick={()=>{
+      this.setState({
+          isChecked:!this.state.isChecked
+      })
+    }}
+    isChecked={this.state.isChecked}
+    leftText={"CheckBox"}
+/>
  ```
 
 ### Custom CheckBox   
@@ -70,9 +78,12 @@ renderCheckBox(data) {
     return (
         <CheckBox
             style={{flex: 1, padding: 10}}
-            onClick={()=>this.onClick(data)}
-            isChecked={data.checked}
-            leftText={leftText}
+            onClick={()=>{
+                 this.setState({
+                     isChecked:!this.state.isChecked
+                 })
+               }}
+            isChecked={this.state.isChecked}
             checkedImage={<Image source={require('../../page/my/img/ic_check_box.png')} style={this.props.theme.styles.tabBarSelectedIcon}/>}
             unCheckedImage={<Image source={require('../../page/my/img/ic_check_box_outline_blank.png')} style={this.props.theme.styles.tabBarSelectedIcon}/>}
         />);
