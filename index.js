@@ -29,6 +29,7 @@ export default class CheckBox extends Component {
         leftText: PropTypes.string,
         leftTextView: PropTypes.element,
         rightText: PropTypes.string,
+        containerStyle: PropTypes.object,
         leftTextStyle: PropTypes.object,
         rightTextView: PropTypes.element,
         rightTextStyle: PropTypes.object,
@@ -46,7 +47,8 @@ export default class CheckBox extends Component {
         isChecked: false,
         isIndeterminate: false,
         leftTextStyle: {},
-        rightTextStyle: {}
+        rightTextStyle: {},
+        containerStyle: {}
     }
 
     onClick() {
@@ -114,7 +116,7 @@ export default class CheckBox extends Component {
                 underlayColor='transparent'
                 disabled={this.props.disabled}
             >
-                <View style={styles.container}>
+                <View style={[styles.container, this.props.containerStyle]}>
                     {this._renderLeft()}
                     {this._renderImage()}
                     {this._renderRight()}
