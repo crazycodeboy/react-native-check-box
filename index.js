@@ -26,6 +26,7 @@ export default class CheckBox extends Component {
 
     static propTypes = {
         ...(ViewPropTypes || View.PropTypes),
+        testID: PropTypes.string,
         leftText: PropTypes.string,
         leftTextView: PropTypes.element,
         rightText: PropTypes.string,
@@ -109,6 +110,7 @@ export default class CheckBox extends Component {
     render() {
         return (
             <TouchableHighlight
+                testID={this.props.testID}
                 style={this.props.style}
                 onPress={() => this.onClick()}
                 underlayColor='transparent'
