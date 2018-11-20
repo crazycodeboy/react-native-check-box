@@ -4,7 +4,6 @@
  * https://github.com/crazycodeboy/react-native-check-box
  * Email:crazycodeboy@gmail.com
  * Blog:http://www.devio.org
- * @flow
  */
 
 import React, {Component} from 'react';
