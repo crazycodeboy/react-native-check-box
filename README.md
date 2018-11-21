@@ -24,20 +24,20 @@ For React Native >= 0.54 use v2.1.2+, for React Native < 0.4.4 use v1.0.4
 ## Installation
 
 * 1.Run `npm i react-native-check-box --save`
-* 2.`import CheckBox from 'react-native-check-box'`    
+* 2.`import CheckBox from 'react-native-check-box'`
 
-## Demo  
+## Demo
 * [Examples](https://github.com/crazycodeboy/react-native-check-box/tree/master/examples)
 
 ![Screenshots](https://raw.githubusercontent.com/crazycodeboy/react-native-check-box/master/examples/Screenshots/react-native-check-box-screenshots.gif)
 
-## Getting started  
+## Getting started
 
-Add `react-native-check-box` to your js file.   
+Add `react-native-check-box` to your js file.
 
-`import CheckBox from 'react-native-check-box'`  
+`import CheckBox from 'react-native-check-box'`
 
-Inside your component's render method, use CheckBox:   
+Inside your component's render method, use CheckBox:
 
 ```javascript
 <CheckBox
@@ -52,10 +52,10 @@ Inside your component's render method, use CheckBox:
 />
 ```
 
-Then you can use it like this:   
+Then you can use it like this:
 
 
-### Basic usage  
+### Basic usage
 
 ```javascript
 <CheckBox
@@ -70,7 +70,7 @@ Then you can use it like this:
 />
  ```
 
-### Custom CheckBox   
+### Custom CheckBox
 
 ```javascript
 renderCheckBox(data) {
@@ -90,7 +90,7 @@ renderCheckBox(data) {
 }
 ```
 
-**More Usage:**    
+**More Usage:**
 
 [GitHubPopular](https://github.com/crazycodeboy/GitHubPopular/blob/develop/js/page/my/CustomKeyPage.js)
 
@@ -112,6 +112,7 @@ unCheckedImage  |  PropTypes.element  | true  |  Default image  | Custom  unchec
 isChecked  |  PropTypes.bool |  false  |  false  | checkbox checked state
 onClick   |  PropTypes.func.isRequired |  false  |  | callback  function
 disabled  |  PropTypes.bool            | true  |  false | Disable the checkbox button
+checkBoxStyle | PropTypes.object | true | | Custom checkbox image style
 checkBoxColor | PropTypes.string | true |   | Tint color of the checkbox image (this props is for both checked and unchecked state)
 checkedCheckBoxColor | PropTypes.string | true |   | Tint color of the checked state checkbox image (this prop will override value of `checkBoxColor` for checked state)
 uncheckedCheckBoxColor | PropTypes.string | true |   | Tint color of the unchecked state checkbox image (this prop will override value of `checkBoxColor` for unchecked state)

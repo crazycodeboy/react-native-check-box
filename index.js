@@ -26,6 +26,7 @@ export default class CheckBox extends Component {
 
     static propTypes = {
         ...(ViewPropTypes || View.PropTypes),
+        checkBoxStyle: PropTypes.object,
         leftText: PropTypes.string,
         leftTextView: PropTypes.element,
         rightText: PropTypes.string,
@@ -102,7 +103,10 @@ export default class CheckBox extends Component {
         }
 
         return (
-            <Image source={source} style={{tintColor: this._getTintColor()}}/>
+            <Image source={source} style={{
+                ...this.props.checkBoxStyle,
+                tintColor: this._getTintColor()
+            }}/>
         );
     }
 
