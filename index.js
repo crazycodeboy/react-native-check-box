@@ -41,12 +41,18 @@ export default class CheckBox extends Component {
         checkedCheckBoxColor: PropTypes.string,
         uncheckedCheckBoxColor: PropTypes.string,
         disabled: PropTypes.bool,
+        leftTextTestID: PropTypes.string,
+        rightTextTestID: PropTypes.string,
+        containerTestID: PropTypes.string
     }
     static defaultProps = {
         isChecked: false,
         isIndeterminate: false,
         leftTextStyle: {},
-        rightTextStyle: {}
+        rightTextStyle: {},
+        leftTextTestID: "CheckBox-LeftText",
+        rightTextTestID: "CheckBox-RightText",
+        containerTestID: "CheckBox-Container"
     }
 
     onClick() {
@@ -54,18 +60,20 @@ export default class CheckBox extends Component {
     }
 
     _renderLeft() {
+        const {leftTextTestID} = this.props;
         if (this.props.leftTextView) return this.props.leftTextView;
         if (!this.props.leftText) return null;
         return (
-            <Text style={[styles.leftText, this.props.leftTextStyle]}>{this.props.leftText}</Text>
+            <Text style={[styles.leftText, this.props.leftTextStyle]} testID={leftTextTestID}>{this.props.leftText}</Text>
         );
     }
 
     _renderRight() {
+        const {rightTextTestID} = this.props;
         if (this.props.rightTextView) return this.props.rightTextView;
         if (!this.props.rightText) return null;
         return (
-            <Text style={[styles.rightText, this.props.rightTextStyle]}>{this.props.rightText}</Text>
+            <Text style={[styles.rightText, this.props.rightTextStyle]} testID={rightTextTestID}>{this.props.rightText}</Text>
         );
     }
 
@@ -107,6 +115,7 @@ export default class CheckBox extends Component {
     }
 
     render() {
+        const {containerTestID} = this.props;
         return (
             <TouchableHighlight
                 style={this.props.style}
@@ -114,7 +123,7 @@ export default class CheckBox extends Component {
                 underlayColor='transparent'
                 disabled={this.props.disabled}
             >
-                <View style={styles.container}>
+                <View style={styles.container} testID={containerTestID}>
                     {this._renderLeft()}
                     {this._renderImage()}
                     {this._renderRight()}
