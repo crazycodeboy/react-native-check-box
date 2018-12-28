@@ -59,7 +59,8 @@ export default class CheckBox extends Component {
     }
 
     onClick() {
-        this.props.onClick();
+        const { onClick } = this.props;
+        onClick ? onClick() : null;
     }
 
     _renderLeft() {
