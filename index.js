@@ -11,13 +11,14 @@ import React, {Component} from 'react';
 import {
     StyleSheet,
     View,
-    ViewPropTypes,
     Image,
     Text,
-    TouchableHighlight
+    TouchableHighlight,
+    ViewPropTypes as RNViewPropTypes,
 } from 'react-native';
 import PropTypes from 'prop-types';
 
+const ViewPropTypes = RNViewPropTypes || View.propTypes;
 
 export default class CheckBox extends Component {
     constructor(props) {
@@ -25,13 +26,21 @@ export default class CheckBox extends Component {
     }
 
     static propTypes = {
-        ...(ViewPropTypes || View.PropTypes),
+        ...ViewPropTypes,
         leftText: PropTypes.string,
         leftTextView: PropTypes.element,
         rightText: PropTypes.string,
-        leftTextStyle: PropTypes.object,
+        leftTextStyle: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.object,
+        ]),
         rightTextView: PropTypes.element,
-        rightTextStyle: PropTypes.object,
+        rightTextStyle: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.object,
+        ]),
         checkedImage: PropTypes.element,
         unCheckedImage: PropTypes.element,
         onClick: PropTypes.func.isRequired,
