@@ -50,12 +50,14 @@ export default class CheckBox extends Component {
         checkedCheckBoxColor: PropTypes.string,
         uncheckedCheckBoxColor: PropTypes.string,
         disabled: PropTypes.bool,
+        hitSlop: PropTypes.object
     }
     static defaultProps = {
         isChecked: false,
         isIndeterminate: false,
         leftTextStyle: {},
-        rightTextStyle: {}
+        rightTextStyle: {},
+        hitSlop: { top: 0, bottom: 0, left: 0, right: 0 }
     }
 
     onClick() {
@@ -121,6 +123,7 @@ export default class CheckBox extends Component {
                 style={this.props.style}
                 onPress={() => this.onClick()}
                 underlayColor='transparent'
+                hitSlop = { this.props.hitSlop }
                 disabled={this.props.disabled}
             >
                 <View style={styles.container}>
