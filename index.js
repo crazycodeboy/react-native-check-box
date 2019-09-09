@@ -41,6 +41,11 @@ export default class CheckBox extends Component {
             PropTypes.number,
             PropTypes.object,
         ]),
+        imageStyle: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.number,
+            PropTypes.object,
+        ]),
         checkedImage: PropTypes.element,
         unCheckedImage: PropTypes.element,
         onClick: PropTypes.func.isRequired,
@@ -50,12 +55,15 @@ export default class CheckBox extends Component {
         checkedCheckBoxColor: PropTypes.string,
         uncheckedCheckBoxColor: PropTypes.string,
         disabled: PropTypes.bool,
+        disabledColor: PropTypes.string
     }
     static defaultProps = {
         isChecked: false,
         isIndeterminate: false,
         leftTextStyle: {},
-        rightTextStyle: {}
+        rightTextStyle: {},
+        imageStyle: {},
+        disabledColor: 'gray'
     }
 
     onClick() {
@@ -98,7 +106,7 @@ export default class CheckBox extends Component {
     }
 
     _getTintColor() {
-        return this.props.isChecked ? this._getCheckedCheckBoxColor() : this._getUncheckedCheckBoxColor()
+        return this.props.disabled? this.props.disabledColor : (this.props.isChecked ? this._getCheckedCheckBoxColor() : this._getUncheckedCheckBoxColor())
     }
 
     genCheckedImage() {
@@ -111,7 +119,7 @@ export default class CheckBox extends Component {
         }
 
         return (
-            <Image source={source} style={{tintColor: this._getTintColor()}}/>
+            <Image source={source} style={[{tintColor: this._getTintColor()}, this.props.imageStyle]}/>
         );
     }
 
