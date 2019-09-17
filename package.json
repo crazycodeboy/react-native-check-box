@@ -3,6 +3,7 @@
   "version": "2.1.7",
   "description": "Checkbox component for react native, it works on iOS and Android.",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
