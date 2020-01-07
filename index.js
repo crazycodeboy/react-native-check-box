@@ -63,18 +63,22 @@ export default class CheckBox extends Component {
     }
 
     _renderLeft() {
-        if (this.props.leftTextView) return this.props.leftTextView;
-        if (!this.props.leftText) return null;
+        const { leftTextView, leftText, leftTextStyle, allowFontScaling } = this.props;
+        
+        if (leftTextView) return leftTextView;
+        if (!leftText) return null;
         return (
-            <Text style={[styles.leftText, this.props.leftTextStyle]}>{this.props.leftText}</Text>
+            <Text style={[styles.leftText, leftTextStyle]} allowFontScaling={allowFontScaling}>{leftText}</Text>
         );
     }
 
     _renderRight() {
-        if (this.props.rightTextView) return this.props.rightTextView;
-        if (!this.props.rightText) return null;
+        const { rightTextView, rightText, rightTextStyle, allowFontScaling } = this.props;
+
+        if (rightTextView) return rightTextView;
+        if (!rightText) return null;
         return (
-            <Text style={[styles.rightText, this.props.rightTextStyle]}>{this.props.rightText}</Text>
+            <Text style={[styles.rightText, rightTextStyle]} allowFontScaling={allowFontScaling}>{rightText}</Text>
         );
     }
 
