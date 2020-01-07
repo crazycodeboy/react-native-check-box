@@ -50,12 +50,14 @@ export default class CheckBox extends Component {
         checkedCheckBoxColor: PropTypes.string,
         uncheckedCheckBoxColor: PropTypes.string,
         disabled: PropTypes.bool,
+        allowFontScaling: PropTypes.bool
     }
     static defaultProps = {
         isChecked: false,
         isIndeterminate: false,
         leftTextStyle: {},
-        rightTextStyle: {}
+        rightTextStyle: {},
+        allowFontScaling: true
     }
 
     onClick() {
