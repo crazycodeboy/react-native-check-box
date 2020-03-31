@@ -26,11 +26,6 @@ export default class CheckBox extends Component {
             isChecked: this.props.isChecked,
         }
     }
-    componentWillReceiveProps(nextProps) {
-        if (this.props.isChecked !== nextProps.isChecked) {
-            this.setState({isChecked: nextProps.isChecked});
-        }
-    }
     static propTypes = {
         ...(ViewPropTypes || View.PropTypes),
         leftText: PropTypes.string,
