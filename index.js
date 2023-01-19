@@ -7,7 +7,7 @@
  * @flow
  */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     StyleSheet,
     View,
@@ -16,9 +16,10 @@ import {
     TouchableHighlight,
     ViewPropTypes as RNViewPropTypes,
 } from 'react-native';
+import { ViewPropTypes as DeprecatedViewPropTypes } from 'deprecated-react-native-prop-types'
 import PropTypes from 'prop-types';
 
-const ViewPropTypes = RNViewPropTypes || View.propTypes;
+const ViewPropTypes = DeprecatedViewPropTypes || RNViewPropTypes || View.propTypes;
 
 export default class CheckBox extends Component {
     constructor(props) {
@@ -111,7 +112,7 @@ export default class CheckBox extends Component {
         }
 
         return (
-            <Image source={source} style={{tintColor: this._getTintColor()}}/>
+            <Image source={source} style={{ tintColor: this._getTintColor() }} />
         );
     }
 
