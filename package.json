@@ -27,7 +27,7 @@
     "url": "https://github.com/crazycodeboy/react-native-check-box/issues"
   },
   "dependencies": {
-    "prop-types": "^15.5.7"
+  
   },
   "peerDependencies": {
     "react-native": ">=0.20.0"
