@@ -1,68 +1,67 @@
-/**
- * react-native-check-box
- * Checkbox component for react native, it works on iOS and Android
- * https://github.com/crazycodeboy/react-native-check-box
- * Email:crazycodeboy@gmail.com
- * Blog:http://www.devio.org
- * @flow
- */
 
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import {
     StyleSheet,
     View,
     Image,
     Text,
     TouchableHighlight,
-    ViewPropTypes as RNViewPropTypes,
+    ViewProps,
+    TextStyle,
+    GestureResponderEvent,
+    ViewStyle
 } from 'react-native';
-import PropTypes from 'prop-types';
 
-const ViewPropTypes = RNViewPropTypes || View.propTypes;
+export interface CheckBoxStyle {
+    container: ViewStyle,
+    leftText: TextStyle,
+    rightText: TextStyle
+}
 
-export default class CheckBox extends Component {
-    constructor(props) {
+export interface CheckBoxProps extends ViewProps {
+    leftText?: string;
+    leftTextView?: unknown;
+    rightText?: string;
+    leftTextStyle: TextStyle;
+    rightTextView?: unknown;
+    rightTextStyle: TextStyle;
+    checkedImage?: unknown;
+    unCheckedImage?: unknown;
+    onClick: (e: GestureResponderEvent) => void;
+    isChecked: boolean;
+    isIndeterminate: boolean;
+    checkBoxColor?: string;
+    checkedCheckBoxColor?: string;
+    uncheckedCheckBoxColor?: string;
+    disabled?: boolean;
+    indeterminateImage?: any;
+}
+
+export interface DefaultProps {
+    isChecked: boolean;
+    isIndeterminate: boolean;
+    leftTextStyle: TextStyle;
+    rightTextStyle: TextStyle;
+}
+
+export default class CheckBox extends Component<CheckBoxProps, {}> {
+    constructor(props: CheckBoxProps) {
         super(props);
     }
-
-    static propTypes = {
-        ...ViewPropTypes,
-        leftText: PropTypes.string,
-        leftTextView: PropTypes.element,
-        rightText: PropTypes.string,
-        leftTextStyle: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.number,
-            PropTypes.object,
-        ]),
-        rightTextView: PropTypes.element,
-        rightTextStyle: PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.number,
-            PropTypes.object,
-        ]),
-        checkedImage: PropTypes.element,
-        unCheckedImage: PropTypes.element,
-        onClick: PropTypes.func.isRequired,
-        isChecked: PropTypes.bool.isRequired,
-        isIndeterminate: PropTypes.bool.isRequired,
-        checkBoxColor: PropTypes.string,
-        checkedCheckBoxColor: PropTypes.string,
-        uncheckedCheckBoxColor: PropTypes.string,
-        disabled: PropTypes.bool,
-    }
-    static defaultProps = {
+    public static defaultProps: DefaultProps = {
         isChecked: false,
         isIndeterminate: false,
         leftTextStyle: {},
         rightTextStyle: {}
     }
 
-    onClick() {
-        this.props.onClick();
+    private onClick(e: GestureResponderEvent): void {
+        if (this.props.onClick) {
+            this.props.onClick(e);
+        }
     }
 
-    _renderLeft() {
+    private _renderLeft(): JSX.Element | any {
         if (this.props.leftTextView) return this.props.leftTextView;
         if (!this.props.leftText) return null;
         return (
@@ -70,7 +69,7 @@ export default class CheckBox extends Component {
         );
     }
 
-    _renderRight() {
+    private _renderRight(): JSX.Element | any {
         if (this.props.rightTextView) return this.props.rightTextView;
         if (!this.props.rightText) return null;
         return (
@@ -78,7 +77,7 @@ export default class CheckBox extends Component {
         );
     }
 
-    _renderImage() {
+    private _renderImage(): any {
         if (this.props.isIndeterminate) {
             return this.props.indeterminateImage ? this.props.indeterminateImage : this.genCheckedImage();
         }
@@ -89,19 +88,19 @@ export default class CheckBox extends Component {
         }
     }
 
-    _getCheckedCheckBoxColor() {
+    private _getCheckedCheckBoxColor(): string | undefined {
         return this.props.checkedCheckBoxColor ? this.props.checkedCheckBoxColor : this.props.checkBoxColor
     }
 
-    _getUncheckedCheckBoxColor() {
+    private _getUncheckedCheckBoxColor(): string | undefined {
         return this.props.uncheckedCheckBoxColor ? this.props.uncheckedCheckBoxColor : this.props.checkBoxColor
     }
 
-    _getTintColor() {
+    private _getTintColor(): string | undefined {
         return this.props.isChecked ? this._getCheckedCheckBoxColor() : this._getUncheckedCheckBoxColor()
     }
 
-    genCheckedImage() {
+    private genCheckedImage(): any {
         let source;
         if (this.props.isIndeterminate) {
             source = require('./img/ic_indeterminate_check_box.png');
@@ -111,15 +110,15 @@ export default class CheckBox extends Component {
         }
 
         return (
-            <Image source={source} style={{tintColor: this._getTintColor()}}/>
+            <Image source={source} style={{ tintColor: this._getTintColor() }} />
         );
     }
 
-    render() {
+    public render(): JSX.Element {
         return (
             <TouchableHighlight
                 style={this.props.style}
-                onPress={() => this.onClick()}
+                onPress={(e: GestureResponderEvent) => this.onClick(e)}
                 underlayColor='transparent'
                 disabled={this.props.disabled}
             >
@@ -132,7 +131,7 @@ export default class CheckBox extends Component {
         );
     }
 }
-const styles = StyleSheet.create({
+const styles: CheckBoxStyle = StyleSheet.create({
     container: {
         flexDirection: 'row',
         alignItems: 'center'
